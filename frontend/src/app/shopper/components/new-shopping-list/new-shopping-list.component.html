@@ -10,6 +10,7 @@
 
   <div>
     <h4>Select Items:</h4>
+    <h5>(One item can be found in maximum of 3 shopping lists)</h5>
     <div *ngFor="let item of items">
       <!-- list of items in database -->
       <label>
@@ -20,7 +21,14 @@
         />
         <!-- [value]="item.id" binds the checkbox's value to the id of each item. This allows you to capture the id when the item is selected. -->
         <!-- (change)="onItemChange($event, item)" binds the change event to the onItemChange() method, passing both the event and the item object when the checkbox is clicked. -->
-        {{ item.name }}  <!-- name of an item --> 
+
+        <span style="margin-left: 10px;">{{ item.name }}</span>   <!-- item name -->
+
+        <div *ngIf="item.quantity !== undefined" class="quantity">  <!-- item quantity (count of item in shopping lists) -->
+          (Already in {{ item.quantity }} 
+          {{ item.quantity === 1 ? 'shopping list' : 'shopping lists' }})
+        </div>
+      
       </label>
     </div>
   </div>

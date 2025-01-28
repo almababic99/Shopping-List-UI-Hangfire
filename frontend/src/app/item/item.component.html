@@ -6,6 +6,7 @@
     <tr>
       <th>ID</th>
       <th>Name</th>
+      <th>Quantity in shopping lists</th>
       <th>Action</th>
     </tr>
   </thead>
@@ -14,6 +15,7 @@
       <!-- items from item.component.ts -->
       <td>{{ item.id }}</td>
       <td>{{ item.name }}</td>
+      <td>{{ item.quantity }}</td>
       <td>
         <div class="d-flex gap-2">
           <a [routerLink]="'/items/edit/' + item.id" class="btn btn-warning btn-sm mr-3">Edit</a>

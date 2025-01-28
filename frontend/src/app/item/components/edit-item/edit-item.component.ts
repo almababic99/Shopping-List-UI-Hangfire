@@ -12,7 +12,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class EditItemComponent implements OnInit {
   item: Item = {  // item object
     id: 0,
-    name: ''
+    name: '',
+    quantity: 0
   };
 
   constructor(private itemService: ItemService, private router: Router, private route: ActivatedRoute) {}

@@ -22,7 +22,8 @@ export class NewItemComponent {
 
     const item = {
       id: 0,
-      name: this.itemName
+      name: this.itemName,
+      quantity: 0
     }
 
     this.itemService.addItem(item).subscribe(
