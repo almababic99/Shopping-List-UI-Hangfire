@@ -1,0 +1,9 @@
+.shopping-image {
+    max-width: 100px;
+    height: auto;
+    border-radius: 10px;
+}
+
+body {
+    margin-top: 80px;
+  }

@@ -1,0 +1,34 @@
+<table class="table table-striped table-bordered table-hover">
+  <caption class="text-center">
+    A list of Shoppers
+  </caption>
+  <thead class="thead-dark">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Shopping Lists</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let shopper of shoppers">
+      <!-- shoppers from shopper.component.ts -->
+      <td>{{ shopper.id }}</td>
+      <td>{{ shopper.name }}</td>
+      <td>
+        <a [routerLink]="'/shoppers/shopping-lists/' + shopper.id" class="btn btn-info btn-sm">{{ shopper.name }}'s Shopping Lists</a>
+      </td>
+      <td>
+        <div class="d-flex gap-2">
+          <a [routerLink]="'/shoppers/edit/' + shopper.id" class="btn btn-warning btn-sm mr-3">Edit</a>
+          <button (click)="deleteShopper(shopper.id)" class="btn btn-danger btn-sm">Delete</button>  <!-- calling deleteShopper from shopper.component.ts -->
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="text-end mb-3">
+  <!-- Link to NewShopperComponent -->
+  <a routerLink="/shoppers/new" class="btn btn-primary">Add New Shopper</a>
+</div>

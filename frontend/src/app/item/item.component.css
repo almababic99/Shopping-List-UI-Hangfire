@@ -1,0 +1,15 @@
+table {
+  margin-top: 50px;
+}
+
+table caption {
+  caption-side: top; 
+  font-weight: bold; 
+  font-size: 1.25rem; 
+  margin-bottom: 10px; 
+}
+
+.invalid-feedback {
+  display: block;  
+  color: #dc3545;  
+}

@@ -1,0 +1,35 @@
+<h2 class="text-center">Add New Shopping List</h2>
+
+<form
+  (ngSubmit)="onSubmit()"
+  class="w-50 mx-auto mt-4 p-4 border rounded shadow-sm"
+>
+  <div *ngIf="errorMessage" class="alert alert-danger"> <!-- error messagee -->
+    {{ errorMessage }}
+  </div>
+
+  <div>
+    <h4>Select Items:</h4>
+    <div *ngFor="let item of items">
+      <!-- list of items in database -->
+      <label>
+        <input
+          type="checkbox"
+          [value]="item.id"   
+          (change)="onItemChange($event, item)"
+        />
+        <!-- [value]="item.id" binds the checkbox's value to the id of each item. This allows you to capture the id when the item is selected. -->
+        <!-- (change)="onItemChange($event, item)" binds the change event to the onItemChange() method, passing both the event and the item object when the checkbox is clicked. -->
+        {{ item.name }}  <!-- name of an item --> 
+      </label>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-between mt-4">
+    <a routerLink="/shoppers/shopping-lists/{{ shopperId }}" class="btn btn-secondary">Cancel</a>
+    <!-- Clicking on Cancel will navigate back to the previous page (shopper's shopping lists) using routerLink="/shoppers/shopping-lists/{{ shopperId }}" -->
+
+    <button type="submit" class="btn btn-primary">Add</button>
+    <!-- Submit button triggers the form submission, calling onSubmit() from new-shopping-list.component.ts -->
+  </div>
+</form>

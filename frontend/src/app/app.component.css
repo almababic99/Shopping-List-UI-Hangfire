@@ -1,0 +1,8 @@
+main {
+  display: flex;
+}
+
+.content-container {
+  flex-grow: 1;
+  padding: 20px;
+}

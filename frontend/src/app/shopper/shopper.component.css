@@ -1,0 +1,15 @@
+table {
+  margin-top: 50px;
+}
+
+table caption {
+  caption-side: top; 
+  font-weight: bold; 
+  font-size: 1.25rem; 
+  margin-bottom: 10px; 
+}
+
+.btn-info {
+  width: 30%;  
+  text-align: center;  
+}
